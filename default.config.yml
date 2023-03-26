@@ -3,10 +3,9 @@ downloads: ~/.ansible-downloads/
 
 configure_dotfiles: true
 configure_terminal: true
-configure_osx: true
 
 # Set to 'true' to configure the Dock via dockutil.
-configure_dock: false
+configure_dock: true
 dockitems_remove: []
 # - Launchpad
 # - TV
@@ -24,21 +23,21 @@ sudoers_custom_config: ''
 #   # Allow users in admin group to use sudo with no password.
 #   %admin ALL=(ALL) NOPASSWD: ALL
 
-dotfiles_repo: https://github.com/geerlingguy/dotfiles.git
+dotfiles_repo: https://github.com/thatnerdjosh/.files.git
 dotfiles_repo_accept_hostkey: true
-dotfiles_repo_local_destination: ~/Development/GitHub/dotfiles
+dotfiles_repo_local_destination: ~/workspace/dotfiles
 dotfiles_files:
   - .zshrc
   - .gitignore
-  - .inputrc
-  - .osx
   - .vimrc
 
 homebrew_installed_packages:
-  # - ansible # Installed via Pip.
   - autoconf
+  - asdf
   - bash-completion
+  - bat
   - doxygen
+  - exa
   - gettext
   - gifsicle
   - git
@@ -51,9 +50,6 @@ homebrew_installed_packages:
   - sqlite
   - mcrypt
   - nmap
-  - node
-  - nvm
-  - php
   - ssh-copy-id
   - cowsay
   - readline
@@ -69,24 +65,22 @@ homebrew_taps:
 
 homebrew_cask_appdir: /Applications
 homebrew_cask_apps:
-  - chromedriver
+  - discord
   - docker
-  - dropbox
   - firefox
   - google-chrome
-  - handbrake
-  - licecap
+  - iterm2
+  - parallels
   - sequel-ace
   - slack
   - sublime-text
   - transmit
+  - visual-studio-code
 
 # See `geerlingguy.mas` role documentation for usage instructions.
 mas_installed_apps: []
 mas_email: ""
 mas_password: ""
-
-osx_script: "~/.osx --no-restart"
 
 # Install packages from other package managers.
 # Note: You are responsible for making sure the required package managers are

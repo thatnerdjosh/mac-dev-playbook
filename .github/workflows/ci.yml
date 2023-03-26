@@ -2,6 +2,7 @@
 name: CI
 'on':
   pull_request:
+  workflow_dispatch:
   push:
     branches:
       - master
@@ -37,7 +38,7 @@ jobs:
       matrix:
         os:
           - macos-12
-          - macos-11
+          # - macos-13
 
     steps:
       - name: Check out the codebase.
@@ -58,8 +59,8 @@ jobs:
 
       - name: Set up the test environment.
         run: |
-          cp tests/ansible.cfg ./ansible.cfg
-          cp tests/inventory ./inventory
+          cp tests/ci/ansible.cfg ./ansible.cfg
+          cp tests/ci/inventory ./inventory
           cp tests/config.yml ./config.yml
           ansible-galaxy install -r requirements.yml
 
